@@ -11,7 +11,7 @@ function list(){
 
 
 function find(properties){
-    return _.cloneDeep(_.filter(data,properties));
+    return _.cloneDeep(_.filter(data, properties));
 }
 
 

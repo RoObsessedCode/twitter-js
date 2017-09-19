@@ -2,22 +2,22 @@ const express = require( 'express' );
 const nunjucks = require('nunjucks');
 const app = express();
 const volleyball = require('volleyball');
-const routes = require('./routes')
+const routes = require('./routes');
 
-app.use('/',routes);
+app.use('/', routes);
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 nunjucks.configure('views');
 
 
-const people = [{name: "Full"}, {name: 'Stacker'}, {name: "Son"}];
+// const people = [{name: "Full"}, {name: 'Stacker'}, {name: "Son"}];
 
 
-app.get('/', (req, res) => {
-    console.log('hitting home route');
-    res.render( 'index', {title: 'Hall of Fame', people: people} );
-});
+// app.get('/', (req, res) => {
+//     console.log('hitting home route');
+//     res.render( 'index', {title: 'Hall of Fame', people: people} );
+// });
 
 app.use(function(req, res, next) {
     console.log('this is middleware');
